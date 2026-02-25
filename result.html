@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+        .result-box {
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            border-left: 5px solid;
+        }
+        .positive {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            color: #155724;
+            border-left-color: #28a745;
+        }
+        .negative {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            color: #721c24;
+            border-left-color: #dc3545;
+        }
+        .neutral {
+            background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+            color: #0c5460;
+            border-left-color: #17a2b8;
+        }
+        .sentiment-text {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .polarity {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .text-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        .text-box strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .text-box p {
+            color: #333;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        a {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        a:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Prediction Result</h1>
+        <div class="result-box {{ sentiment.lower() }}">
+            <div class="sentiment-text">{{ sentiment }} 👍</div>
+            <div class="polarity">Sentiment Score: {{ "%.2f"|format(polarity) }}</div>
+        </div>
+        <div class="text-box">
+            <strong>📝 Your Text:</strong>
+            <p>"{{ text }}"</p>
+        </div>
+        <a href="/">← Analyze Another Text</a>
+    </div>
+</body>
+</html>
