@@ -100,11 +100,11 @@
     <div class="container">
         <h1> Prediction Result</h1>
         <div class="result-box {{ sentiment.lower() }}">
-            <div class="sentiment-text">{{ sentiment }} 👍</div>
+            <div class="sentiment-text">{{ sentiment }} </div>
             <div class="polarity">Sentiment Score: {{ "%.2f"|format(polarity) }}</div>
         </div>
         <div class="text-box">
-            <strong>📝 Your Text:</strong>
+            <strong> Your Text:</strong>
             <p>"{{ text }}"</p>
         </div>
         <a href="/">← Analyze Another Text</a>
@@ -112,3 +112,4 @@
 </body>
 
 </html>
+
