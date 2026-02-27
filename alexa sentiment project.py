@@ -438,7 +438,6 @@ for i in range(0, data.shape[0]):
 
 import os
 
-# 1. Pehle check karega ki 'Models' folder hai ya nahi
 if not os.path.exists('Models'):
     os.makedirs('Models') 
 
@@ -659,7 +658,7 @@ cm_display.plot()
 plt.show()
 
 
-# In[ ]:
+
 
 
 
