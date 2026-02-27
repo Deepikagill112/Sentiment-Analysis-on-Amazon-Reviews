@@ -133,7 +133,7 @@
     
     <div class="container">
         <div class="section">
-            <h2><span class="icon">✍️</span> Text for Prediction</h2>
+            <h2><span class="icon"></span> Text for Prediction</h2>
             <form method="POST" action="/analyze">
                 <textarea name="text" placeholder="Enter your text here..." required></textarea>
                 <button type="submit">🔍 Predict Sentiment</button>
@@ -141,17 +141,18 @@
         </div>
         
         <div class="section">
-            <h2><span class="icon">📊</span> Upload CSV/TSV file</h2>
+            <h2><span class="icon"></span> Upload CSV/TSV file</h2>
             <form method="POST" action="/upload" enctype="multipart/form-data">
                 <input type="file" name="file" accept=".csv,.tsv" required>
-                <button type="submit">📈 Analyze Dataset</button>
+                <button type="submit"> Analyze Dataset</button>
             </form>
         </div>
     </div>
     
     <div class="info">
-        <h3>😊 Understand the emotions behind the words</h3>
+        <h3> Understand the emotions behind the words</h3>
         <p>Text sentiment prediction is a powerful tool that can help you understand the emotions and opinions expressed in your text data. This information can be used to improve your business in a number of ways</p>
     </div>
 </body>
+
 </html>
