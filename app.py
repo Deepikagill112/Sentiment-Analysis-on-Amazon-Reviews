@@ -40,7 +40,7 @@ def upload():
         return jsonify({'error': 'No file selected'})
     
     try:
-        # TSV और CSV दोनों को handle करो
+    # handle tsv and csv both
         if file.filename.endswith('.tsv'):
             df = pd.read_csv(file, sep='\t')
         else:
@@ -59,7 +59,7 @@ def upload():
             else:
                 sentiments.append('Neutral')
         
-        # Graph बनाओ
+        # Graph 
         sentiment_counts = pd.Series(sentiments).value_counts()
         
         plt.figure(figsize=(8, 6))
@@ -69,7 +69,7 @@ def upload():
         plt.ylabel('Count')
         plt.xticks(rotation=0)
         
-        # Image को base64 में convert करो
+        # image convert in base64
         img = io.BytesIO()
         plt.savefig(img, format='png')
         img.seek(0)
@@ -82,4 +82,5 @@ def upload():
         return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
+
     app.run(debug=True)
